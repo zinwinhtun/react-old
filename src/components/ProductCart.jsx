@@ -1,8 +1,10 @@
 import React from "react";
 import Rating from "./Rating";
+import { Link } from "react-router";
 
 const ProductCart = ({
   product: {
+    id,
     title,
     price,
     image,
@@ -10,7 +12,7 @@ const ProductCart = ({
   },
 }) => {
   return (
-    <div className="p-5 border border-black flex flex-col items-start">
+    <Link to={`/productdetail/${id}`} className="p-5 border border-black flex flex-col items-start">
       <img src={image} className="h-40 m-auto" />
       <p className="font-bold line-clamp-2 my-2">{title}</p>
       {/* rarting star  */}
@@ -21,7 +23,7 @@ const ProductCart = ({
           Add Cart
         </button>
       </div>
-    </div>
+    </Link>
   );
 };
 
