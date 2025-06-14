@@ -1,39 +1,36 @@
 import React from "react";
 import { useParams } from "react-router";
 import products from "../data/products";
+import Rating from "../components/Rating";
+import Continer from "../components/Continer";
+import Breadcrumb from "../components/Breadcrumb";
 
 const ProductDetail = () => {
   const { id } = useParams();
   const currentProduct = products.find((product) => product.id == id);
-  console.log(currentProduct);
   return (
-    <div className="p-5 ">
-      <p>Home/Product Detail</p>
-      <div className="border border-black m-4">
-        <div className="flex items-center">
-          <div className="p-3 ms-5">
-            <img
-              src={currentProduct.image}
-              className="w-[300px] mt-5"
-              alt=""
-            />
-            <div className="flex flex-wrap justify-center mt-5 ">
-              <img src={currentProduct.image} className="w-[70px]" />
-              <img src={currentProduct.image} className="w-[70px]" />
-              <img src={currentProduct.image} className="w-[70px]" />
+    <Continer>
+      <Breadcrumb currentPage="Product Detail" />
+      <div className="flex md:flex-row flex-col items-center border lg:border-black mt-5">
+          <div className="img w-1/2 my-5">
+            <img src={currentProduct.image} className="h-40 m-auto" alt="" />
+          </div>
+          <div className="details w-1/2 my-5">
+            <p className="font-bold line-clamp-2 my-2">{currentProduct.title}</p>
+            <div className="flex flex-wrap justify-between my-4 w-full items-end mt-auto">
+              <p className="font-bold bg-gray-200 px-2">{currentProduct.category}</p>
+              <p className="me-5">$ {currentProduct.price}</p> 
             </div>
+            <p className="text-sm text-gray-500 md:px-3 lg:px-5">{currentProduct.description}</p>
+            <div className="mt-3">
+              <Rating rate={currentProduct.rating.rate} />
+            </div>
+            <button className="border border-black px-3 py-1 text-sm mt-5 block mx-auto">
+                Add to Cart
+              </button>
           </div>
-          <div className="flex flex-wrap items-start justify-start">
-            <h1 className="font-bold my-2">
-              {currentProduct.title}
-            </h1>
-            <p>
-              <span className="font-bold">Price:</span> ${currentProduct.price}
-            </p>
-          </div>
-        </div>
       </div>
-    </div>
+    </Continer>
   );
 };
 
