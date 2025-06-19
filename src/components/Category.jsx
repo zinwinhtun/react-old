@@ -1,14 +1,10 @@
+import useCategoties from "../store/useCategories";
 import CategoryBtn from "./CategoryBtn";
 import Continer from "./Continer";
 export default function Category() {
   const title = "Product Category";
 
-  const categories = [
-    "electronics",
-    "jewelery",
-    "men's clothing",
-    "women's clothing",
-  ];
+  const {categories} = useCategoties();
 
   return (
     <section id="category-section" className="p-5">
