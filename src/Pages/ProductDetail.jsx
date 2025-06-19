@@ -1,15 +1,33 @@
 import React from "react";
 import { useParams } from "react-router";
-import products from "../data/products";
 import Rating from "../components/Rating";
 import Continer from "../components/Continer";
 import Breadcrumb from "../components/Breadcrumb";
+import useProductStore from "../store/useProductStore";
+import useCartStore from "../store/useCartStore";
+import toast from "react-hot-toast";
 
 const ProductDetail = () => {
   const { id } = useParams();
+  const {products} = useProductStore();
   const currentProduct = products.find((product) => product.id == id);
+  const {carts , addToCart} = useCartStore();
+  //add to cart function
+  const handelAddToCart = () => {
+    const newCart = {
+      id: Date.now(), // Generate a unique ID for the cart item
+      productId: currentProduct.id,
+      quantity: 1,
+      price: currentProduct.price,
+    };
+
+    addToCart(newCart);
+    toast.success("Added to cart");
+
+    
+  }
   return (
-    <Continer>
+    <Continer className="px-5">
       <Breadcrumb currentPage="Product Detail" />
       <div className="flex md:flex-row flex-col items-center border lg:border-black mt-5">
           <div className="img w-1/2 my-5">
@@ -25,9 +43,14 @@ const ProductDetail = () => {
             <div className="mt-3">
               <Rating rate={currentProduct.rating.rate} />
             </div>
-            <button className="border border-black px-3 py-1 text-sm mt-5 block mx-auto">
+            {carts.find((cart) => cart.productId == currentProduct.id) ? (
+              <button  className="border border-black px-3 py-1 bg-black text-white text-sm mt-5 block mx-auto">
+                Added
+              </button>    
+            ) :<button onClick={handelAddToCart} className="border border-black px-3 py-1 text-sm mt-5 block mx-auto">
                 Add to Cart
-              </button>
+              </button>}
+            
           </div>
       </div>
     </Continer>

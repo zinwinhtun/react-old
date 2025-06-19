@@ -11,9 +11,9 @@ export default function Category() {
       <Continer>
         <p className="text-sm text-gray-500 px-5 p-2 mb-2">{title}</p>
       <div className="flex overflow-x-scroll category-btn-container">
-        <CategoryBtn category="all" current={true} />
-        {categories.map((category) => (
-            <CategoryBtn key={category} category={category} current={false}/>
+        {/* Render Category Buttons */}
+        {categories.map((category) => ( 
+            <CategoryBtn key={category.id} category={category} current={category.isActive}/>
         ))}
       </div>
       </Continer>

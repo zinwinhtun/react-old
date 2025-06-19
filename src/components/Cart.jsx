@@ -1,27 +1,50 @@
 import React from "react";
+import useProductStore from "../store/useProductStore";
+import useCartStore from "../store/useCartStore";
+import toast from "react-hot-toast";
 
-const Cart = ({ cart }) => {
-  //    console.log({cart});
+const Cart = ({ cart:{id,productId,quantity} }) => {
+  const {products} = useProductStore();
+  
+  const product = products.find((el) => el.id === productId);
+
+  const {increaseQuantity, decreaseQuantity, removeCartItem} = useCartStore();
+
+
+  const handleIncrease = () => {
+    increaseQuantity(id);
+  }
+
+  const handleDecrease = () => {
+    if (quantity > 1) {
+      decreaseQuantity(id);
+    }else{
+      toast.error("Removed from cart")&& removeCartItem(id);
+    }
+  }
+
+
+  
   return (
     <div className="grid grid-cols-6 items-center justify-center text-center border border-black p-3 my-3">
       <div className="col-span-1 mx-auto">
-        <img src={cart.product.image} className="h-18" alt="" />
+        <img src={product.image} className="h-18" alt="" />
       </div>
       <div className="col-span-3 ">
-        <p className="font-bold">{cart.product.title}</p>
-        <p className="text-sm  text-gray-600">Price - $ {cart.product.price}</p>
+        <p className="font-bold">{product.title}</p>
+        <p className="text-sm  text-gray-600">Price - $ {product.price}</p>
       </div>
       <div className="col-span-1">
         <p>Quantity</p>
         <div className="mt-2">
-          <button className="border border-black bg-black text-white px-2 py-1 text-sm">-</button>
-          <span className="mx-2">{cart.quantity}</span>
-          <button className="border border-black bg-black text-white px-2 py-1 text-sm">+</button>
+          <button onClick={handleDecrease} className="border border-black bg-black text-white px-2 py-1 text-sm">-</button>
+          <span className="mx-2">{quantity}</span>
+          <button onClick={handleIncrease} className="border border-black bg-black text-white px-2 py-1 text-sm">+</button>
         </div>
       
       </div>
       <div className="col-span-1">
-        <p className="">$ {cart.product.price * cart.quantity}</p>
+        <p className="">$ {(product.price * quantity).toFixed(2)}</p>
       </div>
     </div>
   );
