@@ -4,7 +4,7 @@ import { Link, useNavigate } from "react-router";
 import useCartStore from "../store/useCartStore";
 import toast from "react-hot-toast";
 
-const ProductCart = ({product: { id,title,price,image,rating: { rate }}}) => {
+const ProductCart = ({product: { id,title,price,image,rating: { rate },slag}}) => {
   // Access the carts from the cart store
   const {carts , addToCart} = useCartStore();
   const  navigate = useNavigate();
@@ -30,7 +30,7 @@ const ProductCart = ({product: { id,title,price,image,rating: { rate }}}) => {
 
   //go to product detail page
   const goToProductDetail = () => {
-   navigate(`/productdetail/${id}`);
+   navigate(`/productdetail/${slag}`);
    
   };
 

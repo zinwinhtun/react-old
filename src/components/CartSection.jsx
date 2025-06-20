@@ -4,7 +4,7 @@ import { Link } from "react-router";
 import useCartStore from "../store/useCartStore";
 import useProductStore from "../store/useProductStore";
 
-import emptyCartImage from "../../public/shopping.png"; // Assuming you have an empty cart image
+import emptyCartImage from "../Asset/shopping.png"; // Assuming you have an empty cart image
 
 const CartSection = () => {
   const { carts } = useCartStore();

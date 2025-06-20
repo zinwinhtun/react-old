@@ -8,9 +8,9 @@ import useCartStore from "../store/useCartStore";
 import toast from "react-hot-toast";
 
 const ProductDetail = () => {
-  const { id } = useParams();
+  const { slag } = useParams();
   const {products} = useProductStore();
-  const currentProduct = products.find((product) => product.id == id);
+  const currentProduct = products.find((product) => product.slag == slag);
   const {carts , addToCart} = useCartStore();
   //add to cart function
   const handelAddToCart = () => {

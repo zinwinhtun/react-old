@@ -14,6 +14,7 @@ const useProductStore = create(() => ({
         rate: 3.9,
         count: 120,
       },
+      slag: "fjallraven-foldsack-no-1-backpack-fits-15-laptops"
     },
     {
       id: 2,
@@ -28,6 +29,7 @@ const useProductStore = create(() => ({
         rate: 4.1,
         count: 259,
       },
+      slag : "mens-casual-premium-slim-fit-t-shirts"
     },
     {
       id: 3,
@@ -41,6 +43,7 @@ const useProductStore = create(() => ({
         rate: 4.7,
         count: 500,
       },
+      slag : "mens-cotton-jacket"
     },
     {
       id: 4,
@@ -54,6 +57,7 @@ const useProductStore = create(() => ({
         rate: 2.1,
         count: 430,
       },
+      slag : "mens-casual-slim-fit"
     },
     {
       id: 5,
@@ -68,6 +72,7 @@ const useProductStore = create(() => ({
         rate: 4.6,
         count: 400,
       },
+      slag: "john-hardy-womens-legends-naga-gold-silver-dragon-station-chain-bracelet"
     },
     {
       id: 6,
@@ -81,6 +86,7 @@ const useProductStore = create(() => ({
         rate: 3.9,
         count: 70,
       },
+      slag: "solid-gold-petite-micropave"
     },
     {
       id: 7,
@@ -94,6 +100,7 @@ const useProductStore = create(() => ({
         rate: 3,
         count: 400,
       },
+      slag: "white-gold-plated-princess"
     },
     {
       id: 8,
@@ -107,6 +114,7 @@ const useProductStore = create(() => ({
         rate: 1.9,
         count: 100,
       },
+      slag: "pierced-owl-rose-gold-plated-stainless-steel-double"
     },
     {
       id: 9,
@@ -120,6 +128,7 @@ const useProductStore = create(() => ({
         rate: 3.3,
         count: 203,
       },
+      slag: "wd-2tb-elements-portable-external-hard-drive-usb-3-0"
     },
     {
       id: 10,
@@ -133,6 +142,7 @@ const useProductStore = create(() => ({
         rate: 2.9,
         count: 470,
       },
+      slag: "sandisk-ssd-plus-1tb-internal-ssd-sata-iii-6-gb-s"
     },
     {
       id: 11,
@@ -147,6 +157,7 @@ const useProductStore = create(() => ({
         rate: 4.8,
         count: 319,
       },
+      slag: "silicon-power-256gb-ssd-3d-nand-a55-slc-cache-performance-boost-sata-iii-2-5"
     },
     {
       id: 12,
@@ -161,6 +172,7 @@ const useProductStore = create(() => ({
         rate: 4.8,
         count: 400,
       },
+      slag: "wd-4tb-gaming-drive-works-with-playstation-4-portable-external-hard-drive"
     },
     {
       id: 13,
@@ -174,6 +186,7 @@ const useProductStore = create(() => ({
         rate: 2.9,
         count: 250,
       },
+      slag: "acer-sb220q-bi-21-5-inches-full-hd-1920-x-1080-ips-ultra-thin"
     },
     {
       id: 14,
@@ -188,6 +201,7 @@ const useProductStore = create(() => ({
         rate: 2.2,
         count: 140,
       },
+      slag: "samsung-49-inch-chg90-144hz-curved-gaming-monitor-lc49hg90dmnxza-super-ultrawide-screen-qled"
     },
     {
       id: 15,
@@ -201,6 +215,7 @@ const useProductStore = create(() => ({
         rate: 2.6,
         count: 235,
       },
+      slag: "biyalacelsen-womens-3-in-1-snowboard-jacket-winter-coats"
     },
     {
       id: 16,
@@ -215,6 +230,7 @@ const useProductStore = create(() => ({
         rate: 2.9,
         count: 340,
       },
+      slag: "lock-and-love-womens-removable-hooded-faux-leather-moto-biker-jacket"
     },
     {
       id: 17,
@@ -228,6 +244,7 @@ const useProductStore = create(() => ({
         rate: 3.8,
         count: 679,
       },
+      slag: "rain-jacket-women-windbreaker-striped-climbing-raincoats"
     },
     {
       id: 18,
@@ -241,6 +258,7 @@ const useProductStore = create(() => ({
         rate: 4.7,
         count: 130,
       },
+      slag: "mbj-womens-solid-short-sleeve-boat-neck-v"
     },
     {
       id: 19,
@@ -254,6 +272,7 @@ const useProductStore = create(() => ({
         rate: 4.5,
         count: 146,
       },
+      slag: "opna-womens-short-sleeve-moisture"
     },
     {
       id: 20,
@@ -267,6 +286,7 @@ const useProductStore = create(() => ({
         rate: 3.6,
         count: 145,
       },
+      slag: "danvouy-womens-t-shirt-casual-cotton-short"
     },
   ],
 }))
